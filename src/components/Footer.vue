@@ -4,7 +4,7 @@
   <div flex gap-4 justify-between text-xl>
     <a
       icon-btn
-      href="https://geniuscorn-vue3-starter.netlify.app/"
+      href="https://geniuscorn-tic-tac-toe.netlify.app/"
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -19,8 +19,7 @@
       icon-btn
       rel="noreferrer"
       target="_blank"
-      href="https://github.com/GeniusCorn/vue3-starter
-    "
+      href="https://github.com/GeniusCorn/tic-tac-toe-game"
     >
       <div i-tabler-brand-github />
     </a>
