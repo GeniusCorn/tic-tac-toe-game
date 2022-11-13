@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <Counter />
+  <GameBoard />
 </template>
 
 <style scoped></style>
