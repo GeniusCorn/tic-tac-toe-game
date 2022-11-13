@@ -74,17 +74,15 @@ const statusMessage = $computed(() => {
       <div
         v-for="(y, yIndex) in 3"
         :key="yIndex"
-        border
         w-10
         h-10
         flex="~"
         justify-center
         items-center
+        outline="~ 1 black"
         @click="move(xIndex, yIndex)"
       >
-        <div>
-          {{ board[xIndex][yIndex] }}
-        </div>
+        {{ board[xIndex][yIndex] }}
       </div>
     </div>
   </div>
