@@ -2,16 +2,21 @@
 const board: string[][] = $ref([
   ['', '', ''],
   ['', '', ''],
-  ['', '', '']
+  ['', '', ''],
 ])
 
 type Player = 'O' | 'X'
 
 let player: Player = 'O'
 
+const winner: string | null = $computed(() => calculateWinner(board.flat()))
+const isEmpty: boolean = $computed(() => calculateEmpty(board.flat()))
+
 function move(x: number, y: number): void {
-  if (board[x][y] !== '') return
-  if (winner !== null) return
+  if (board[x][y] !== '')
+    return
+  if (winner !== null)
+    return
 
   board[x][y] = player
 
@@ -20,9 +25,8 @@ function move(x: number, y: number): void {
 
 function resetBoard(): void {
   for (let i = 0; i < board.length; i += 1) {
-    for (let j = 0; j < board[i].length; j += 1) {
+    for (let j = 0; j < board[i].length; j += 1)
       board[i][j] = ''
-    }
   }
 
   player = 'O'
@@ -36,7 +40,7 @@ const lines: number[][] = [
   [1, 4, 7],
   [2, 5, 8],
   [0, 4, 8],
-  [2, 4, 6]
+  [2, 4, 6],
 ]
 
 function calculateWinner(board: string[]): string | null {
@@ -51,19 +55,19 @@ function calculateWinner(board: string[]): string | null {
 
 function calculateEmpty(board: string[]): boolean {
   for (let i = 0; i < board.length; i += 1) {
-    if (board[i] === '') return true
+    if (board[i] === '')
+      return true
   }
 
   return false
 }
 
-const winner: string | null = $computed(() => calculateWinner(board.flat()))
-const isEmpty: boolean = $computed(() => calculateEmpty(board.flat()))
-
 const statusMessage = $computed(() => {
-  if (winner === null && !isEmpty) return `It's a draw!`
+  if (winner === null && !isEmpty)
+    return `It's a draw!`
 
-  if (winner === null) return `It's ${player}'s turn.`
+  if (winner === null)
+    return `It's ${player}'s turn.`
   else return `${winner} has won!`
 })
 </script>
@@ -72,14 +76,7 @@ const statusMessage = $computed(() => {
   <div grid grid-cols-3>
     <div v-for="(x, xIndex) in 3" :key="xIndex">
       <div
-        v-for="(y, yIndex) in 3"
-        :key="yIndex"
-        w-10
-        h-10
-        flex="~"
-        justify-center
-        items-center
-        outline="~ 1 black"
+        v-for="(y, yIndex) in 3" :key="yIndex" w-10 h-10 flex="~" justify-center items-center outline="~ 1 black"
         @click="move(xIndex, yIndex)"
       >
         {{ board[xIndex][yIndex] }}
@@ -93,15 +90,7 @@ const statusMessage = $computed(() => {
 
   <div flex="~">
     <div
-      bg-green-200
-      p-2
-      text-sm
-      rounded-lg
-      hover:opacity-50
-      cursor-pointer
-      transition
-      duration-200
-      ease-in-out
+      bg-green-200 p-2 text-sm rounded-lg hover:opacity-50 cursor-pointer transition duration-200 ease-in-out
       @click="resetBoard"
     >
       Reset
@@ -109,4 +98,5 @@ const statusMessage = $computed(() => {
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+</style>

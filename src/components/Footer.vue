@@ -8,7 +8,7 @@
       target="_blank"
       rel="noopener noreferrer"
     >
-      <div i-tabler-network></div>
+      <div i-tabler-network />
     </a>
 
     <a icon-btn href="mailto:hi@nicecorn.com">
@@ -28,10 +28,8 @@
   <div text-xs text-slate-500>
     <span>
       Powered by
-      <a text-slate-500 hover:opacity-50 href="https://github.com/GeniusCorn"
-        >GeniusCorn
-      </a></span
-    >
+      <a text-slate-500 hover:opacity-50 href="https://github.com/GeniusCorn">GeniusCorn
+      </a></span>
   </div>
 </template>
 

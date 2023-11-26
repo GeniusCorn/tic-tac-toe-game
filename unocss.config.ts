@@ -1,17 +1,17 @@
 import {
   defineConfig,
-  presetUno,
   presetAttributify,
+  presetIcons,
   presetTagify,
-  presetIcons
+  presetUno,
 } from 'unocss'
 
 export default defineConfig({
   shortcuts: [
     [
       'icon-btn',
-      'inline-block cursor-pointer select-none text-black transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600'
-    ]
+      'inline-block cursor-pointer select-none text-black transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600',
+    ],
   ],
-  presets: [presetUno(), presetAttributify(), presetTagify(), presetIcons()]
+  presets: [presetUno(), presetAttributify(), presetTagify(), presetIcons()],
 })
